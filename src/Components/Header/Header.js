@@ -72,10 +72,13 @@ const Header = () => {
     "link",
     "sats",
   ];
+  const themeToggle = (
+   <></>
+  );
   return (
-    <header className="bg-neutral md:bg-opacity-0">
+    <header className="bg-neutral sticky top-0 ">
       <div className="container px-4 md:px-0 mx-auto py-4 flex justify-between items-center">
-        <img src={Logo} className='w-28 md:w-40' alt="" />
+        <img src={Logo} className="w-20 md:w-28" alt="" /> 
         <nav className="hidden md:block">
           <ul className="  items-center gap-8  hidden md:flex">
             <li className="hover:text-primary ">
@@ -93,10 +96,11 @@ const Header = () => {
           </ul>
         </nav>
         <div className="md:flex items-center hidden">
+          { themeToggle}
           <select
             name=""
             id=""
-            className="w-21 bg-base-100 text-white opacity-50 mr-12 font-semibold"
+            className="w-21 bg-neutral text-white opacity-50 mr-12 font-semibold"
             onChange={(e) => dispatch(setCurrency(e.target.value))}
           >
             {currencies.map((currency) => (
@@ -105,24 +109,30 @@ const Header = () => {
               </option>
             ))}
           </select>
-          <Link className="text-primary mr-4" to="#">
+        
+          <Link className="text-primary mr-8" to="#">
             Sign In
           </Link>
-          <button className="text-white bg-primary px-4 font-medium py-2 md:py-4  md:px-8 capitalize rounded-lg">
+          <button className="text-white bg-primary px-4 font-medium py-2  md:px-8 capitalize rounded-lg">
             Register
           </button>
         </div>
 
         {menu ? (
-          <BiX
-            className="text-3xl block md:hidden hover:text-primary"
-            onClick={() => dispatch(displayMenu(false))}
-          />
+          <div className="md:hidden flex gap-2">{themeToggle }
+            <BiX
+              className="text-3xl block md:hidden hover:text-primary"
+              onClick={() => dispatch(displayMenu(false))}
+            />
+          </div>
         ) : (
-          <HiOutlineMenuAlt3
+            <div className="md:hidden flex gap-2">
+              {themeToggle}
+              <HiOutlineMenuAlt3
             className="text-3xl block md:hidden hover:text-primary"
             onClick={() => dispatch(displayMenu(true))}
           />
+            </div>
         )}
       </div>
     </header>
