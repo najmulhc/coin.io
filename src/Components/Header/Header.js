@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className="bg-neutral md:bg-base-100 sticky md:static top-0 ">
-      <div className="container px-4 md:px-0 mx-auto py-4 flex justify-between items-center">
+      <div className="container px-4 mx-auto py-4 flex justify-between items-center">
         <img src={Logo} className="w-20 md:w-28" alt="" />
         <Navbar />
         <div className="md:flex items-center hidden">
