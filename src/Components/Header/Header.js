@@ -1,138 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Logo from "../../Assets/Images/logo.svg";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { setCurrency } from "../../Feature/currencySlice";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { BiX } from "react-icons/bi";
 import { displayMenu } from "../../Feature/menuSlice";
+import Navbar from "./Navbar";
+import CurrencySelector from "./CurrencySelector";
+import AuthButtons from "./AuthButtons";
 const Header = () => {
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.menu.value);
-  const currencies = [
-    "aed",
-    "ars",
-    "aud",
-    "bch",
-    "bdt",
-    "bhd",
-    "bmd",
-    "bnb",
-    "brl",
-    "btc",
-    "cad",
-    "chf",
-    "clp",
-    "cny",
-    "czk",
-    "dkk",
-    "dot",
-    "eos",
-    "eth",
-    "eur",
-    "gbp",
-    "hkd",
-    "huf",
-    "idr",
-    "ils",
-    "inr",
-    "jpy",
-    "krw",
-    "kwd",
-    "lkr",
-    "ltc",
-    "mmk",
-    "mxn",
-    "myr",
-    "ngn",
-    "nok",
-    "nzd",
-    "php",
-    "pkr",
-    "pln",
-    "rub",
-    "sar",
-    "sek",
-    "sgd",
-    "thb",
-    "try",
-    "twd",
-    "uah",
-    "usd",
-    "vef",
-    "vnd",
-    "xag",
-    "xau",
-    "xdr",
-    "xlm",
-    "xrp",
-    "yfi",
-    "zar",
-    "bits",
-    "link",
-    "sats",
-  ];
-  const themeToggle = (
-   <></>
-  );
+
   return (
-    <header className="bg-neutral sticky top-0 ">
+    <header className="bg-neutral md:bg-base-100 sticky md:static top-0 ">
       <div className="container px-4 md:px-0 mx-auto py-4 flex justify-between items-center">
-        <img src={Logo} className="w-20 md:w-28" alt="" /> 
-        <nav className="hidden md:block">
-          <ul className="  items-center gap-8  hidden md:flex">
-            <li className="hover:text-primary ">
-              <Link to="#">Watchlist</Link>
-            </li>
-            <li className="hover:text-primary ">
-              <Link to="#">Portfolio</Link>
-            </li>
-            <li className="hover:text-primary ">
-              <Link to="#">Market</Link>
-            </li>
-            <li className="hover:text-primary ">
-              <Link to="#">Learn</Link>
-            </li>
-          </ul>
-        </nav>
+        <img src={Logo} className="w-20 md:w-28" alt="" />
+        <Navbar />
         <div className="md:flex items-center hidden">
-          { themeToggle}
-          <select
-            name=""
-            id=""
-            className="w-21 bg-neutral text-white opacity-50 mr-12 font-semibold"
-            onChange={(e) => dispatch(setCurrency(e.target.value))}
-          >
-            {currencies.map((currency) => (
-              <option value={currency} key={currency}>
-                {currency.toUpperCase()}
-              </option>
-            ))}
-          </select>
-        
-          <Link className="text-primary mr-8" to="#">
-            Sign In
-          </Link>
-          <button className="text-white bg-primary px-4 font-medium py-2  md:px-8 capitalize rounded-lg">
-            Register
-          </button>
+          <CurrencySelector />
+
+          <AuthButtons />
         </div>
 
         {menu ? (
-          <div className="md:hidden flex gap-2">{themeToggle }
+          <div className="md:hidden flex gap-2">
             <BiX
               className="text-3xl block md:hidden hover:text-primary"
               onClick={() => dispatch(displayMenu(false))}
             />
           </div>
         ) : (
-            <div className="md:hidden flex gap-2">
-              {themeToggle}
-              <HiOutlineMenuAlt3
-            className="text-3xl block md:hidden hover:text-primary"
-            onClick={() => dispatch(displayMenu(true))}
-          />
-            </div>
+          <div className="md:hidden flex gap-2">
+            <HiOutlineMenuAlt3
+              className="text-3xl block md:hidden hover:text-primary"
+              onClick={() => dispatch(displayMenu(true))}
+            />
+          </div>
         )}
       </div>
     </header>
