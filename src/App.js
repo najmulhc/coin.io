@@ -15,6 +15,7 @@ import Watchlist from './Pages/Watchlist/Watchlist'
 const App = () => {
   const taha = useSelector(state => state.currency.value);
   const menu = useSelector(state => state.menu.value);
+  console.log(taha)
   return (
     <div className='min-w-screen min-h-96 bg-base-100'> 
       <Header />
