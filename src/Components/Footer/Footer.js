@@ -4,7 +4,7 @@ import FooterNav from "./FooterNav";
 import FooterTop from "./FooterTop";
 const Footer = () => {
   return (
-    <footer className="bg-neutral py-8 md:py-12 ">
+    <footer className="bg-neutral py-8 md:py-12 px-2">
       <div className="container mx-auto md:px-8  "> 
         <FooterTop /> 
         <FooterNav /> 

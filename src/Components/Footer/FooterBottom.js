@@ -8,7 +8,7 @@ const FooterBottom = () => {
       <div className="md:flex justify-between items-center">
         <Link
           to="#"
-          className="text-white font-light block opacity-60 text-xs mb-4 md:text-left text-center min-w-[250px]"
+          className="text-white font-light block opacity-60 text-xs mb-4 md:text-left text-center min-w-[300px]"
         >
           ©2022 NajmulHC. All rights reserved
         </Link>
@@ -33,8 +33,8 @@ const FooterBottom = () => {
           </Link>
         </div>
       </div>
-          <div className="text-center">
-              <h3 className="text-center w-full  flex gap-4 text-xl cursor-pointer "><FaFacebookF/> <FaInstagram/> <FaYoutube/> <FaTwitter/> <FaLinkedinIn/></h3>
+          <div className="md:block w-full md:w-auto flex justify-center ">
+              <h3 className="text-center md:w-full  flex gap-4 text-xl cursor-pointer "><FaFacebookF/> <FaInstagram/> <FaYoutube/> <FaTwitter/> <FaLinkedinIn/></h3>
       </div>
     </div>
   );
