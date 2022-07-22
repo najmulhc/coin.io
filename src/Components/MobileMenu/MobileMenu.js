@@ -1,6 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux"; 
 import { displayMenu } from "../../Feature/menuSlice";
 import BasicBlock from "../Shared/BasicBlock";
 import { AiOutlineStock,AiOutlineHistory , AiOutlineWallet, AiOutlineBulb } from "react-icons/ai";
@@ -22,7 +21,7 @@ const MobileMenu = () => {
         <div className="grid grid-cols-2 gap-4 mb-2">
           <div className="flex w-full items-center justify-center text-primary">
             {" "}
-            <h3>Sign in</h3>
+           <button className="btn bg-white text-primary capitalize w-full">Sign In</button>
           </div>
           <button className="btn capitalize btn-primary">Register</button>
         </div>
