@@ -12,13 +12,12 @@ const Header = () => {
   const menu = useSelector((state) => state.menu.value);
 
   return (
-    <header className="bg-neutral md:bg-base-100 sticky md:static top-0 ">
+    <header className="bg-neutral md:bg-base-100 sticky md:static top-0 z-50 ">
       <div className="container px-4 mx-auto py-4 flex justify-between items-center">
         <img src={Logo} className="w-20 md:w-28" alt="" />
         <Navbar />
         <div className="md:flex items-center hidden">
           <CurrencySelector />
-
           <AuthButtons />
         </div>
 

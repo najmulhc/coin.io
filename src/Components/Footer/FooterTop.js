@@ -7,7 +7,7 @@ import { SiAppstore } from 'react-icons/si'
 import {IoLogoGooglePlaystore} from 'react-icons/io5'
 const FooterTop = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center max-w-sm md:max-w-full">
     <img src={logo} className="w-32" alt="" />
     <div className="flex justify-between items-center gap-2 md:gap-4">
       <DownloadFrom from="Download PC-Client" platform="Windows">
