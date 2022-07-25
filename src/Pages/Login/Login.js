@@ -11,7 +11,7 @@ const Login = () => {
           <input
             type="email"
             placeholder="Enter email"
-            class="input  bg-neutral  w-full"
+            class="input  bg-neutral block w-full"
             required
           />
           <input
