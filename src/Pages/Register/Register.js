@@ -27,7 +27,7 @@ const Register = () => {
               placeholder="Choose a password"
               name=""
               id=""
-              className="input w-full bg-neutral"
+              className="input w-full bg-neutral border-0"
             />
             <button className="text-xl py-4   " onClick={e => {
               e.preventDefault();
