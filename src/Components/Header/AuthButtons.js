@@ -25,10 +25,10 @@ const AuthButtons = () => {
     );
   } else {
     return (
-      <>
-        <button className="btn btn-priamry px-4"><img src={user?.photoURL} alt="" />
-          {user.email}</button>
-      </>
+      <div className="flex items-center gap-2">
+        <img className="w-12 h-12 rounded-full border-2 border-white " src={user.photoURL} alt="" />  
+        <h2 className="text-primary">{user.email}</h2>
+      </div>
     )
   }
 };
