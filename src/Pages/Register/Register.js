@@ -20,14 +20,14 @@ const Register = () => {
             id=""
             className="input block w-full mb-4 bg-neutral"
           />
-          <div className="flex items-center justify-between  w-full   mb-4">
+          <div className="input bg-neutral   focus-within:border-2 focus-within:border-gray-500 flex items-center justify-between  w-full   mb-4 ">
             {" "}
             <input
               type={displayPassword? 'text':'password'}
               placeholder="Choose a password"
               name=""
               id=""
-              className="input w-full bg-neutral border-0"
+              className=" w-full outline-none   bg-neutral"
             />
             <button className="text-xl py-4   " onClick={e => {
               e.preventDefault();
