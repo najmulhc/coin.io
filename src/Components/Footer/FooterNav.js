@@ -34,6 +34,7 @@ const FooterNav = () => {
           <Link
             to="#"
             className="text-white font-light block opacity-60 text-xs mb-4 text-left "
+            key={item}
           >
             {item}
           </Link>
@@ -45,6 +46,7 @@ const FooterNav = () => {
           <Link
             to="#"
             className="text-white font-light block opacity-60 text-xs mb-4 text-left "
+            key={item}
           >
             {item}
           </Link>
@@ -55,7 +57,8 @@ const FooterNav = () => {
         {company.map((item) => (
           <Link
             to="#"
-            className="text-white font-light block opacity-60 text-xs mb-4 text-left "
+            className="text-white font-light block opacity-60 text-xs mb-4 text-left " 
+            key={item}
           >
             {item}
           </Link>
@@ -67,6 +70,7 @@ const FooterNav = () => {
           <Link
             to="#"
             className="text-white font-light block opacity-60 text-xs mb-4 text-left "
+            key={item}
           >
             {item}
           </Link>
@@ -79,7 +83,7 @@ const FooterNav = () => {
           <input
             type="email"
             placeholder="Enter email"
-            class="input input-bordered border-primary w-full"
+            className="input input-bordered border-primary w-full"
           />
           <button className="btn btn-primary ml-2 rounded-md capitalize">
             Send
