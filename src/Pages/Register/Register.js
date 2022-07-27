@@ -5,28 +5,36 @@ import SharedAuth from "../../Components/Shared/SharedAuth";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../firebase.init";
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
+import { createImageFromInitials } from "../../Utils/ProfileImg";
 const Register = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
+  const [updateProfile, updating, uerror] = useUpdateProfile(auth);
   const [password, setPasssword] = useState("");
   const [confrimPassword, setConfirmPassword] = useState("");
   const [displayPassword, setDisplayPassword] = useState(false);
   const [displayConfirmPassword, setDisplayConfirmPasseord] = useState(false); 
+  
   const [
     createUserWithEmailAndPassword,
     user,
     loading,
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
-  
+  const imgUrl = createImageFromInitials(100, email)
   const register = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(email, password);
   }
+  const updateImg = async() => {
+    await updateProfile({ photoURL: imgUrl })
+    await navigate("/")
+  }
   useEffect(() => {
     if (user) {
       console.log(user.user)
-      navigate("/")
+updateImg()
     }
   }, [user])
   if (error) {

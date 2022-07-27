@@ -1,24 +1,36 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../../firebase.init";
 const AuthButtons = () => {
-  
-  return (
-    <>
-      {" "}
-      <Link
-        to="/login"
-        className="text-primary mr-8 min-w-max" 
-      >
-        Sign In
-      </Link>
-      <Link
-        to="/register" 
-        className="text-white bg-primary px-4 font-medium py-2  md:px-8 capitalize rounded-lg"
-      >
-        Register
-      </Link>
-    </>
-  );
+  const [user] = useAuthState(auth);
+  console.log(user)
+  if (!user) {
+    return (
+      <>
+        {" "}
+        <Link
+          to="/login"
+          className="text-primary mr-8 min-w-max" 
+        >
+          Sign In
+        </Link>
+        <Link
+          to="/register" 
+          className="text-white bg-primary px-4 font-medium py-2  md:px-8 capitalize rounded-lg"
+        >
+          Register
+        </Link>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <button className="btn btn-priamry px-4"><img src={user?.photoURL} alt="" />
+          {user.email}</button>
+      </>
+    )
+  }
 };
 
 export default AuthButtons;
