@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BasicBlock from "../../Components/Shared/BasicBlock";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SharedAuth from "../../Components/Shared/SharedAuth";
 import { BsFillEyeSlashFill, BsFillEyeFill } from "react-icons/bs";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from "../../firebase.init";
 const Register = () => {
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
   const [password, setPasssword] = useState("");
   const [confrimPassword, setConfirmPassword] = useState("");
   const [displayPassword, setDisplayPassword] = useState(false);
@@ -22,9 +23,13 @@ const Register = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(email, password);
   }
-  if (user) {
-    console.log(user.user)
-  } if (error) {
+  useEffect(() => {
+    if (user) {
+      console.log(user.user)
+      navigate("/")
+    }
+  }, [user])
+  if (error) {
     console.log(error.message)
   }
   return (

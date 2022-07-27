@@ -4,25 +4,31 @@ import { FcGoogle } from 'react-icons/fc'
 import {FaApple, FaFacebookF} from 'react-icons/fa'
 import { auth } from '../../firebase.init'
 import { signInWithPopup } from 'firebase/auth'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useNavigate } from 'react-router-dom'
 const SharedAuth = () => {
+    const navigate = useNavigate();
     const Gprovider = new GoogleAuthProvider();
     const Fprovider = new FacebookAuthProvider();
     const facebook = e => {
         e.preventDefault();
         signInWithPopup(auth,Fprovider).then((result) => {
             console.log(result)
+navigate("/")
     }).catch((error) => {
             console.log(error.error)
         })
-    }
+    } 
     const google = e => {
         e.preventDefault();
         signInWithPopup(auth,Gprovider).then((result) => {
-                console.log(result)
+            console.log(result)
+            navigate("/")
         }).catch((error) => {
                 console.log(error.error)
             })
-     }
+    }
+     
   return (
       <>
           <div className='flex justify-between items-center'>
