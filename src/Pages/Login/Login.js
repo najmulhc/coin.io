@@ -9,7 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState("");
   const navigate= useNavigate()
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, ] =
     useSignInWithEmailAndPassword(auth);
   const login = (event) => {
     event.preventDefault();
@@ -21,9 +21,9 @@ const Login = () => {
      }
   }, [user,navigate])
   return (
-    <section className="container mx-auto flex justify-center min-h-screen items-center">
-      <BasicBlock>
-        <div className="min-w-[400px]">
+    <section className="container mx-auto flex justify-center min-h-screen items-center ">
+   <div className="p-4">   <BasicBlock>
+        <div className="">
           {" "}
           <h2 className="text-2xl pr-4 mb-4 ">Sign In into Coin.io</h2>
           <form  onSubmit={login}>
@@ -63,7 +63,7 @@ const Login = () => {
           </form>
            <SharedAuth  /> 
         </div>
-      </BasicBlock>
+      </BasicBlock></div>
     </section>
   );
 };

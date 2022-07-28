@@ -39,8 +39,8 @@ const Register = () => {
   }
   return (
     <section className="container mx-auto flex justify-center min-h-screen items-center">
-      <BasicBlock>
-        <div className="min-w-[400px]">
+      <div className="p-4"><BasicBlock>
+        <div className=" ">
           {" "}
           <h2 className="text-2xl pr-4 mb-4 min-w-">Create an account</h2>
           <form onSubmit={register}>
@@ -129,7 +129,7 @@ const Register = () => {
           </form>
           <SharedAuth />
         </div>
-      </BasicBlock>
+      </BasicBlock></div>
     </section>
   );
 };

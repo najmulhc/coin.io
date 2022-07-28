@@ -18,8 +18,8 @@ const PasswordRecovery = () => {
   };
   return (
     <section className="min-h-screen min-w-screen bg-base-100 flex justify-center items-center">
-      <BasicBlock>
-        <div className="min-w-[400px]">
+   <div className="container mx-auto p-4">   <BasicBlock>
+        <div className=" ">
           <h2 className="text-2xl pr-4 mb-4 ">Password Recovery</h2>
           <p className="text-white mb-12 mt-4 text-sm opacity-80">
             Enter your email to recover your password
@@ -40,7 +40,7 @@ const PasswordRecovery = () => {
             Send Recovery email
           </button>
         </div>
-      </BasicBlock>
+      </BasicBlock></div>
     </section>
   );
 };
