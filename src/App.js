@@ -18,7 +18,7 @@ const App = () => {
   const menu = useSelector((state) => state.menu.value);
   console.log(taha);
   return (
-    <div className="min-w-screen min-h-screen bg-base-100">
+    <main className="min-w-screen min-h-screen bg-base-100">
       <Header />
       {menu ? (
         <MobileMenu />
@@ -35,7 +35,7 @@ const App = () => {
         </Routes>
       )}
       <Footer />
-    </div>
+    </main>
   );
 };
 
