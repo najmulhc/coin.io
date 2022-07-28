@@ -9,6 +9,7 @@ import Home from "./Pages/Home/Home";
 import Learn from "./Pages/Learn/Learn";
 import Login from "./Pages/Login/Login";
 import Market from "./Pages/Market/Market";
+import PasswordRecovery from "./Pages/PasswordRecovery/PasswordRecovery";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Register from "./Pages/Register/Register";
 import TradeHistory from "./Pages/TradeHistory/TradeHistory";
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/recover-password" element={<PasswordRecovery />} />
         </Routes>
       )}
       <Footer />

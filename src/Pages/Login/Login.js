@@ -45,7 +45,7 @@ const Login = () => {
                
             />
             <div className="my-4 text-right w-full">
-              <Link to="/" className="font-light text-primary  text-right">
+              <Link to="/recover-password" className="font-light text-primary  text-right">
                 Forgot Password?
               </Link>
             </div>
