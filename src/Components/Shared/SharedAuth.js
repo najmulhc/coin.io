@@ -1,10 +1,9 @@
 import React from 'react'
-import { FacebookAuthProvider, getAuth, GoogleAuthProvider } from 'firebase/auth'
+import { FacebookAuthProvider,   GoogleAuthProvider } from 'firebase/auth'
 import { FcGoogle } from 'react-icons/fc'
 import {FaApple, FaFacebookF} from 'react-icons/fa'
 import { auth } from '../../firebase.init'
-import { signInWithPopup } from 'firebase/auth'
-import { useAuthState } from 'react-firebase-hooks/auth'
+import { signInWithPopup } from 'firebase/auth' 
 import { useNavigate } from 'react-router-dom'
 const SharedAuth = () => {
     const navigate = useNavigate();
@@ -31,11 +30,7 @@ navigate("/")
      
   return (
       <>
-          <div className='flex justify-between items-center'>
-              <hr className='border border-white w-full' />
-              <h3 className='text-center m-2 '>or continue with</h3>
-              <hr className='border border-white w-full ' />
-          </div>
+        <div className="divider">or continue with</div>
           <div className='w-full flex justify-center items-center my-4 gap-4'>
               <button className='bg-base-100 inline-block p-2 text-3xl rounded-md' onClick={google}><FcGoogle/></button>
               <button className='bg-base-100 inline-block p-2 text-3xl rounded-md'><FaApple/></button>

@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../Assets/Images/logo.svg";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { BiX } from "react-icons/bi";
@@ -12,9 +13,9 @@ const Header = () => {
   const menu = useSelector((state) => state.menu.value);
 
   return (
-    <header className="bg-neutral md:bg-base-100 sticky md:static top-0 z-50 ">
+    <header className="bg-neutral  sticky md:static top-0 z-50 ">
       <div className="container px-4 mx-auto py-4 flex justify-between items-center">
-        <img src={Logo} className="w-20 md:w-28" alt="" />
+        <Link to="/"><img src={Logo} className="w-20 md:w-28" alt="" /></Link>
         <Navbar />
         <div className="md:flex items-center hidden">
           <CurrencySelector />

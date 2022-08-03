@@ -1,17 +1,11 @@
-import { signOut } from "firebase/auth";
+ 
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import { auth } from "../../firebase.init";
+import { createImageFromInitials } from "../../Utils/ProfileImg";
 const AuthButtons = () => {
-  const [user] = useAuthState(auth);
-  const navigate = useNavigate();
-  const logOut = () => {
-    signOut(auth).then(() => {
-      navigate("/login")
-    })
-  }
-  console.log(user)
+  const [user] = useAuthState(auth);  
   if (!user) {
     return (
       <>
@@ -32,10 +26,10 @@ const AuthButtons = () => {
     );
   } else {
     return (
-      <div className="flex items-center gap-2" onClick={logOut}>
-        <img className="w-12 h-12 rounded-full border-2 border-white " src={user.photoURL} alt="" />  
-        <h2 className="text-primary">{user.email}</h2>
-      </div>
+      <Link to="/profile" className="flex items-center gap-4 min-w-[200px] "  >
+        <img className="w-12 h-12 rounded-full  " src={createImageFromInitials(100, user.email)} alt="" />  
+        <p className="text-primary min-w-full">{user?.displayName || "User"}</p>
+      </Link>
     )
   }
 };
