@@ -68,8 +68,6 @@ const CurrencySelector = () => {
       ];
   return (
     <select
-    name=""
-    id=""
     className="w-full  md:w-21 bg-neutral text-white opacity-50 mr-12 font-semibold"
     onChange={(e) => dispatch(setCurrency(e.target.value))}
   >

@@ -1,8 +1,9 @@
 import React from 'react'
+import Container from '../../Components/Shared/Container'
 
 const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <Container>Portfolio</Container>
   )
 }
 

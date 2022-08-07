@@ -1,8 +1,9 @@
 import React from 'react'
+import Container from '../../Components/Shared/Container'
 
 const Watchlist = () => {
   return (
-    <div>Watchlist</div>
+    <Container>Watchlist</Container>
   )
 }
 

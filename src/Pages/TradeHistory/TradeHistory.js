@@ -1,8 +1,9 @@
 import React from 'react'
+import Container from '../../Components/Shared/Container'
 
 const TradeHistory = () => {
   return (
-    <div>TradeHistory</div>
+    <Container>TradeHistory</Container>
   )
 }
 

@@ -27,7 +27,7 @@ const App = () => {
   const menu = useSelector((state) => state.menu.value);
   console.log(taha);
   return (
-    <main className="min-w-screen min-h-screen bg-base-100">
+    <div className="App h-screen w-screen bg-base-100">
       <Header />
       {menu ? (
         <MobileMenu />
@@ -44,19 +44,26 @@ const App = () => {
           <Route path="/recover-password" element={<PasswordRecovery />} />
           <Route path="/profile" element={<Profile />}>
             <Route path="/profile/" element={<AccountBasic />} />
-              <Route path="/profile/security" element={<Security />} />
-              <Route path="/profile/notificaion-preferences" element={ <Notification />} /> 
-              <Route path="/profile/currency-preferences" element={ <CurrencyPreferance />} /> 
-              <Route path="/profile/kyc-varify" element={<KYC />} /> 
-              <Route path="/profile/payment-options" element={<PaymentOptions />} /> 
-              <Route path="/profile/api-management" element={<ApiManagement />} /> 
-              
-              
+            <Route path="/profile/security" element={<Security />} />
+            <Route
+              path="/profile/notificaion-preferences"
+              element={<Notification />}
+            />
+            <Route
+              path="/profile/currency-preferences"
+              element={<CurrencyPreferance />}
+            />
+            <Route path="/profile/kyc-varify" element={<KYC />} />
+            <Route
+              path="/profile/payment-options"
+              element={<PaymentOptions />}
+            />
+            <Route path="/profile/api-management" element={<ApiManagement />} />
           </Route>
         </Routes>
       )}
       <Footer />
-    </main>
+    </div>
   );
 };
 

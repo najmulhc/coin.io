@@ -1,8 +1,11 @@
 import React from 'react'
+import Container from '../../Components/Shared/Container'
 
 const Learn = () => {
   return (
-    <div>Learn</div>
+    <Container className="my-4 " >
+     <p>This is the learn page </p>
+    </Container>
   )
 }
 

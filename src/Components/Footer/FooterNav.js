@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsPaypal, BsFillCreditCardFill } from "react-icons/bs";
 import { RiMastercardFill } from "react-icons/ri";
-import {FaBitcoin} from 'react-icons/fa'
+import { FaBitcoin } from "react-icons/fa";
+import PaymentIcon from "./PaymentIcon";
 const FooterNav = () => {
   const exchange = [
     "Exchange Home",
@@ -57,7 +58,7 @@ const FooterNav = () => {
         {company.map((item) => (
           <Link
             to="#"
-            className="text-white font-light block opacity-60 text-xs mb-4 text-left " 
+            className="text-white font-light block opacity-60 text-xs mb-4 text-left "
             key={item}
           >
             {item}
@@ -96,18 +97,18 @@ const FooterNav = () => {
           We accept following payment systems{" "}
         </Link>
         <div className="grid grid-cols-4 gap-4">
-          <div className="text-white bg-base-100 w-full flex justify-center items-center text-xl rounded-md py-4">
+          <PaymentIcon>
             <BsPaypal />
-          </div>
-          <div className="text-white bg-base-100 w-full flex justify-center items-center text-xl rounded-md py-4">
+          </PaymentIcon>
+          <PaymentIcon>
             <RiMastercardFill />
-          </div>
-          <div className="text-white bg-base-100 w-full flex justify-center items-center text-xl rounded-md py-4">
+          </PaymentIcon>
+          <PaymentIcon>
             <FaBitcoin />
-          </div>
-          <div className="text-white bg-base-100 w-full flex justify-center items-center text-xl rounded-md py-4">
+          </PaymentIcon>
+          <PaymentIcon>
             <BsFillCreditCardFill />
-          </div>
+          </PaymentIcon>
         </div>
       </div>
     </div>

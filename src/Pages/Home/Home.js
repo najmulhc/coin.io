@@ -1,8 +1,11 @@
 import React from 'react'
+import Container from '../../Components/Shared/Container'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <Container className="my-4"> 
+      Home page
+    </Container>
   )
 }
 

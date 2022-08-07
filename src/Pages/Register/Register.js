@@ -8,6 +8,8 @@ import { auth } from "../../firebase.init";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
 import { createImageFromInitials } from "../../Utils/ProfileImg";
 import { BsCheck2Circle } from "react-icons/bs";
+import Container from "../../Components/Shared/Container";
+import AuthHeading from "../../Components/Shared/AuthHeading";
 const Register = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
@@ -17,7 +19,7 @@ const Register = () => {
   const [displayPassword, setDisplayPassword] = useState(false);
   const [displayConfirmPassword, setDisplayConfirmPasseord] = useState(false);
 
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user,  error] =
     useCreateUserWithEmailAndPassword(auth);
   const imgUrl = createImageFromInitials(100, email);
   const register = (e) => {
@@ -38,12 +40,12 @@ const Register = () => {
     console.log(error.message);
   }
   return (
-    <section className="container mx-auto flex justify-center min-h-screen items-center">
-      <div className="p-4">
-        <BasicBlock>
+    <Container className="flex justify-center min-h-screen items-center p-4">
+      
+        <BasicBlock className="max-w-sm">
           <div className=" ">
             {" "}
-            <h2 className="text-2xl pr-4 mb-4 min-w-">Create an account</h2>
+            <AuthHeading>Create an account</AuthHeading>
             <form onSubmit={register}>
               <div>
                 <input
@@ -106,12 +108,12 @@ const Register = () => {
               </div>
 
               <div className="my-4 w-full flex items-center gap-2">
-                <BsCheck2Circle className="text-primary " />
+                <BsCheck2Circle className="text-primary text-[40px]" />
                 <p className="text-white">
                   By Register, I agree that I'm 18 years of age or older, to the{" "}
-                  <Link to="#" className="text-primary">
-                    User <br /> Agreement, Privacy Policy, Cookie Policy
-                  </Link>
+                  <Link to="#" className="inline-block text-primary">User agriment,{" "} </Link>
+                  <Link to="#" className="inline-block text-primary">Privcy Policy, </Link>
+                  <Link to="#" className="inline-block text-primary">{" "} Cookie Policy</Link>
                 </p>
               </div>
               {password === confrimPassword && password !== "" ? (
@@ -136,8 +138,8 @@ const Register = () => {
             <SharedAuth />
           </div>
         </BasicBlock>
-      </div>
-    </section>
+ 
+    </Container>
   );
 };
 

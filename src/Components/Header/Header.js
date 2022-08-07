@@ -8,14 +8,17 @@ import { displayMenu } from "../../Feature/menuSlice";
 import Navbar from "./Navbar";
 import CurrencySelector from "./CurrencySelector";
 import AuthButtons from "./AuthButtons";
+import Container from "../Shared/Container";
 const Header = () => {
   const dispatch = useDispatch();
   const menu = useSelector((state) => state.menu.value);
 
   return (
     <header className="bg-neutral  sticky md:static top-0 z-50 ">
-      <div className="container px-4 mx-auto py-4 flex justify-between items-center">
-        <Link to="/"><img src={Logo} className="w-20 md:w-28" alt="" /></Link>
+      <Container className="p-4 flex justify-between items-center">
+        <Link to="/">
+          <img src={Logo} className="w-20 md:w-28" alt="" />
+        </Link>
         <Navbar />
         <div className="md:flex items-center hidden">
           <CurrencySelector />
@@ -37,7 +40,7 @@ const Header = () => {
             />
           </div>
         )}
-      </div>
+      </Container>
     </header>
   );
 };
